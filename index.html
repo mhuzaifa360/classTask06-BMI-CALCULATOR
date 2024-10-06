@@ -68,7 +68,6 @@
 </head>
 <body>
     <div class="container">
-        <form id="input-form">
             <h1>BMI Calculator</h1>
 
             <input type="number"  id="input-height" placeholder="Height in meters">
@@ -77,14 +76,13 @@
 
 
             <button id="calculate-button" onclick="calculateBMI()"> Calculate</button>
-        </form>
+        
 
         <h2 id="output-display"></h2>
     </div>
 
     <script>
         function calculateBMI(){
-
             //take value from both input
             var date_from_height = document.getElementById("input-height").value;
             
@@ -96,13 +94,16 @@
                 alert("Input field is required")
             }else if(date_from_weight.trim() === ""){
                 alert("Input field is required")
+            }else{
+                var calculate = date_from_weight/date_from_height;
+
+                document.getElementById("output-display").textContent = calculate;
             }
             
 
             //take value from input and paste in output 
-            var calculate = date_from_weight/date_from_height;
 
-            document.getElementsByTagName("h2").textContent = "hi"
+           
             // alert(date_from_height);
         }
     </script>
